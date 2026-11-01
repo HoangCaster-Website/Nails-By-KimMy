@@ -10,7 +10,10 @@
     { src: "8.jpg", alt: "Roze nagels met een witte French finish" },
     { src: "9.jpg", alt: "Lichtblauwe nagels met glitter en ombre-effect" },
     { src: "10.jpg", alt: "Diep bordeauxrode nagels met hoogglans" },
-    { src: "11.jpg", alt: "Roze nagels met een opvallende fuchsia French tip" }
+    { src: "11.jpg", alt: "Roze nagels met een opvallende fuchsia French tip" },
+    { src: "assets/gallery/bordeaux-silver-french.jpg", alt: "Glanzende bordeauxrode en zachtroze amandelnagels met zilveren French details" },
+    { src: "assets/gallery/green-gold-nail-art.jpg", alt: "Groen-witte amandelnagels met bladpatroon en gouden details" },
+    { src: "assets/gallery/pearl-gray-nails.jpg", alt: "Parelgrijze nagels met een verfijnde zilveren rand" }
   ];
   const videos = [
     { src: "video1.mp4", poster: "1.jpg", label: "Creatie 1" },

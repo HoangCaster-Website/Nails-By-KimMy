@@ -52,8 +52,9 @@
 
     const visibleBottom = viewport.height + viewport.offsetTop;
     const layoutCoveredBottom = window.innerHeight - visibleBottom;
-    const screenCoveredBottom = viewport.scale === 1 ? window.screen.height - visibleBottom : 0;
-    const safariToolbarFallback = document.documentElement.classList.contains("ios-safari") ? 96 : 0;
+    const isIOSSafari = document.documentElement.classList.contains("ios-safari");
+    const screenCoveredBottom = !isIOSSafari && viewport.scale === 1 ? window.screen.height - visibleBottom : 0;
+    const safariToolbarFallback = isIOSSafari ? 110 : 0;
     const coveredBottom = Math.max(0, layoutCoveredBottom, screenCoveredBottom, safariToolbarFallback);
     document.documentElement.style.setProperty("--mobile-browser-offset", `${Math.round(coveredBottom)}px`);
   }

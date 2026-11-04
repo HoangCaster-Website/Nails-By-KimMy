@@ -45,6 +45,22 @@
   const videoCaption = document.querySelector("#video-caption");
   let activeGalleryIndex = 0;
 
+  function syncMobileBrowserOffset() {
+    const viewport = window.visualViewport;
+    if (!viewport) return;
+
+    const coveredBottom = Math.max(0, window.innerHeight - viewport.height - viewport.offsetTop);
+    document.documentElement.style.setProperty("--mobile-browser-offset", `${Math.round(coveredBottom)}px`);
+  }
+
+  if (window.visualViewport) {
+    syncMobileBrowserOffset();
+    window.visualViewport.addEventListener("resize", syncMobileBrowserOffset, { passive: true });
+    window.visualViewport.addEventListener("scroll", syncMobileBrowserOffset, { passive: true });
+    window.addEventListener("orientationchange", syncMobileBrowserOffset, { passive: true });
+    window.addEventListener("pageshow", syncMobileBrowserOffset, { passive: true });
+  }
+
   function renderServiceCards() {
     if (!serviceGrid) return;
     serviceGrid.innerHTML = serviceCards.map(({ serviceId, priceIndex, displayName }, index) => {

@@ -280,7 +280,7 @@ h1 em, h2 em { color: var(--accent); font-weight: 400; }
 
 @media (max-width: 760px) {
   html { scroll-padding-top: 72px; }
-  body { padding-bottom: 64px; font-size: 15px; }
+  body { padding-bottom: calc(64px + max(env(safe-area-inset-bottom, 0px), var(--mobile-browser-offset, 0px))); font-size: 15px; }
   .section-wrap { width: calc(100% - 38px); }
   .site-header { height: 68px; padding-inline: 19px; }
   .brand-mark { width: 40px; height: 40px; }
@@ -373,7 +373,7 @@ h1 em, h2 em { color: var(--accent); font-weight: 400; }
   .footer-top > p { font-size: 20px; }
   .footer-bottom { align-items: flex-start; flex-direction: column; gap: 13px; padding-top: 18px; }
   .footer-bottom nav { gap: 15px; flex-wrap: wrap; }
-  .mobile-contact-bar { position: fixed; z-index: 99; right: 0; bottom: 0; left: 0; display: block; padding: 8px 16px max(8px, env(safe-area-inset-bottom)); border-top: 1px solid var(--line); background: color-mix(in srgb, var(--canvas) 91%, transparent); backdrop-filter: blur(14px); }
+  .mobile-contact-bar { position: fixed; z-index: 99; right: 0; bottom: max(env(safe-area-inset-bottom, 0px), var(--mobile-browser-offset, 0px)); left: 0; display: block; padding: 8px 16px; border-top: 1px solid var(--line); background: color-mix(in srgb, var(--canvas) 91%, transparent); backdrop-filter: blur(14px); }
   .mobile-contact-bar a { display: flex; min-height: 46px; align-items: center; justify-content: center; border: 1px solid #ad7410; border-radius: 999px; background: var(--gold-gradient); color: #251800; font-size: 11px; font-weight: 800; letter-spacing: .03em; box-shadow: inset 0 1px 0 rgba(255, 250, 226, .78), 0 9px 22px rgba(130, 87, 11, .2); }
 }
 

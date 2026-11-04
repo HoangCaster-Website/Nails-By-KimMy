@@ -18,6 +18,13 @@
   --sans: Aptos, "Segoe UI Variable", "Segoe UI", Arial, sans-serif;
   --content: 1240px;
   --radius: 18px;
+  --mobile-browser-offset: 0px;
+}
+
+.ios-safari { --mobile-browser-offset: 96px; }
+
+@media (display-mode: standalone) {
+  .ios-safari { --mobile-browser-offset: 0px; }
 }
 
 * { box-sizing: border-box; }
